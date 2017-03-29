@@ -6,17 +6,17 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 12:18:01 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/22 12:28:37 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/03/27 13:44:08 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-double		ft_calc_shift(double r, double t, t_env *e)
+double		ft_calc_shift(double mouse, double length, t_env *e)
 {
 	double	shift;
 
-	shift = SHIFT * ((r / t) / e->zoom);
+	shift = 0.5 * ((mouse / length) / e->zoom);
 	return (shift);
 }
 
@@ -53,6 +53,8 @@ int			ft_mouse_hook(int button, int x, int y, t_env *e)
 	e->mousey = y;
 	if (button == 1 || button == 4)
 	{
+		if (e->iter == 500)
+			ft_putstr("Trop d'iteration = LAG!\n");
 		e->zoom *= e->zoom_step;
 		e->shiftx += ft_calc_shift(MOUSE_REL_X, (LENGTH / 2), e);
 		e->shifty += ft_calc_shift(MOUSE_REL_Y, (HEIGHT / 2), e);

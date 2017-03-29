@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:16:44 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/22 13:18:38 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/03/28 14:42:53 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int			ft_loop(t_env *e)
 {
 	if (e->redraw)
 	{
-		e->iter++;
 		ft_draw(e);
 		e->redraw = 0;
 	}
@@ -27,7 +26,7 @@ int			ft_expose(t_env *e)
 {
 	e->redraw = 1;
 	if (!WIN)
-		exit(0);
+		exit(write(1, "Error\n", 6));
 	return (0);
 }
 

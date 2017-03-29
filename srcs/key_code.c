@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 17:21:26 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/22 12:20:43 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/03/27 14:00:29 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,12 @@ void	ft_change_map(int key, t_env *e)
 		ft_initialise(e);
 	}
 	if (key == 86)
-		e->iter += 10;
+	{
+		if (e->iter < 500)
+			e->iter += 10;
+		else
+			ft_putstr("Iter Max.");
+	}
 }
 
 int		event(int key, t_env *e)

@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 15:45:43 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/22 12:24:49 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/03/27 20:07:22 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@
 # define HEIGHT 1200
 # define LENGTH 800
 # define ZOOM 1.1
-# define MOVE 0.3
-# define SHIFT 0.5
 # define MLX e->mlx
 # define WIN e->win
 # define IMG e->img
@@ -39,17 +37,17 @@
 # define MOUSE_REL_X (e->mousex - LENGTH / 2)
 # define MOUSE_REL_Y (e->mousey - HEIGHT / 2)
 
-typedef struct		s_comp
+typedef struct		s_init
 {
 	double re;
 	double im;
-}					t_comp;
+}					t_init;
 
 typedef struct		s_graph
 {
-	t_comp			z;
-	t_comp			oldz;
-	t_comp			newz;
+	t_init			z;
+	t_init			oldz;
+	t_init			newz;
 }					t_graph;
 
 typedef struct		s_env
@@ -79,9 +77,9 @@ typedef struct		s_env
 	void			*mlx;
 	void			*win;
 	void			*img;
-	t_comp			*julia;
-	t_comp			*julia_max;
-	t_comp			*julia_min;
+	t_init			*julia;
+	t_init			*julia_max;
+	t_init			*julia_min;
 	t_graph			*draw;
 }					t_env;
 
