@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 12:18:01 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/27 13:44:08 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/05/20 12:20:19 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ double		ft_calc_shift(double mouse, double length, t_env *e)
 {
 	double	shift;
 
-	shift = 0.5 * ((mouse / length) / e->zoom);
+	shift = 0.5 * ((mouse / length) / e->zoom / 2);
 	return (shift);
 }
 

@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 17:21:26 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/27 14:00:29 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/05/20 12:40:24 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int		event(int key, t_env *e)
 		e->movey -= e->move_step;
 	if (key == 8)
 	{
-		e->r = (rand() % 256) + 1;
-		e->b = (rand() % 256) + 1;
-		e->g = (rand() % 256) + 1;
+		e->r = e->b >> 16;
+		e->b = rand();
+		e->g = e->b >> 8;
 	}
 	if (key == 6)
 		ft_initialise(e);

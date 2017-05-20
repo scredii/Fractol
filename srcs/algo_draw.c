@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 17:22:20 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/28 14:10:29 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/05/20 12:28:18 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,21 @@ void		ft_draw(t_env *e)
 void		pixel(int x, int y, int i, t_env *e)
 {
 	int		pos;
+	int		color;
 
+	color = 0xFFFFFF;
 	pos = (x * (BPP / 8)) + (y * e->size);
 	if (i == e->iter)
 	{
-		DATA[pos] = 0;
-		DATA[pos + 1] = 0;
-		DATA[pos + 2] = 0;
+		DATA[pos] = color >> 8;
+		DATA[pos + 1] = color >> 16;
+		DATA[pos + 2] = color;
 		DATA[pos + 3] = 0;
 	}
 	else
 	{
-		DATA[pos] = i * e->b;
-		DATA[pos + 1] = i * e->g;
+		DATA[pos] = i * e->b >> 8;
+		DATA[pos + 1] = i * e->g >> 16;
 		DATA[pos + 2] = i * e->r;
 		DATA[pos + 3] = 0;
 	}
@@ -58,9 +60,9 @@ void		ft_mandel(t_env *e)
 		y = -1;
 		while (++y < HEIGHT)
 		{
-			draw.z.re = (x - LENGTH / 2) / (e->zoom * (LENGTH / 2))
+			draw.z.re = ((long double)x - 600) / (e->zoom * 600)
 				+ e->movex + e->shiftx;
-			draw.z.im = (y - HEIGHT / 2) / (e->zoom * (HEIGHT / 2))
+			draw.z.im = ((long double)y - 800) / (e->zoom * 800)
 				+ e->movey + e->shifty;
 			draw.newz.re = 0;
 			draw.newz.im = 0;
@@ -87,9 +89,9 @@ void		ft_julia(t_env *e)
 		y = -1;
 		while (++y < HEIGHT)
 		{
-			draw.newz.re = 1.5 * (x - LENGTH / 2) / (e->zoom * (LENGTH / 2))
+			draw.newz.re = 1.5 * ((long double)x - 600) / (e->zoom * 600)
 				+ e->movex + e->shiftx;
-			draw.newz.im = (y - LENGTH / 2) / (e->zoom * (LENGTH / 2))
+			draw.newz.im = ((long double)y - 600) / (e->zoom * 600)
 				+ e->movey + e->shifty;
 			i = ft_iter(&draw, e);
 			pixel(x, y, i, e);

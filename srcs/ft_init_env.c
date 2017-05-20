@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 19:31:35 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/28 14:14:13 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/05/20 12:31:31 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ void		ft_initialise(t_env *e)
 	e->shifty = 0;
 	e->movex = 0;
 	e->movey = -0.2;
-	e->zoom = 1;
+	e->zoom = 0.7;
 	e->zoom_step = ZOOM;
 	e->move_step = 0.3;
-	e->r = 0x000000;
-	e->g = 0x59f89d / 50;
-	e->b = 0xc6e2ff;
+	e->r = 0x000003;
+	e->g = 0x00003A;
+	e->b = 0x000036;
 	if (e->fractol == 1)
 		ft_init_julia(e);
 	else

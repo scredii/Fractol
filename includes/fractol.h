@@ -6,7 +6,7 @@
 /*   By: abourgeu <abourgeu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 15:45:43 by abourgeu          #+#    #+#             */
-/*   Updated: 2017/03/27 20:07:22 by abourgeu         ###   ########.fr       */
+/*   Updated: 2017/05/17 14:52:34 by abourgeu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include "../minilibx/mlx.h"
 # include "../libft/libft.h"
 # include "get_next_line.h"
-# define HEIGHT 1200
-# define LENGTH 800
+# define HEIGHT 1600
+# define LENGTH 1200
 # define ZOOM 1.1
 # define MLX e->mlx
 # define WIN e->win
