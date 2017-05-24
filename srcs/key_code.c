@@ -14,22 +14,22 @@
 
 void	ft_change_map(int key, t_env *e)
 {
-	if (key == 83)
+	if (key == 18)
 	{
 		e->fractol = 1;
 		ft_initialise(e);
 	}
-	if (key == 84)
+	if (key == 19)
 	{
 		e->fractol = 2;
 		ft_initialise(e);
 	}
-	if (key == 85)
+	if (key == 20)
 	{
 		e->fractol = 3;
 		ft_initialise(e);
 	}
-	if (key == 86)
+	if (key == 34)
 	{
 		if (e->iter < 500)
 			e->iter += 10;

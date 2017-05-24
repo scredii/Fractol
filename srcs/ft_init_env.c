@@ -66,8 +66,8 @@ void		ft_initialise(t_env *e)
 	e->shiftx = 0;
 	e->shifty = 0;
 	e->movex = 0;
-	e->movey = -0.2;
-	e->zoom = 0.7;
+	e->movey = 0.3;
+	e->zoom = 0.5;
 	e->zoom_step = ZOOM;
 	e->move_step = 0.3;
 	e->r = 0x000003;

@@ -20,8 +20,8 @@
 # include "../minilibx/mlx.h"
 # include "../libft/libft.h"
 # include "get_next_line.h"
-# define HEIGHT 1600
-# define LENGTH 1200
+# define HEIGHT 600
+# define LENGTH 800
 # define ZOOM 1.1
 # define MLX e->mlx
 # define WIN e->win

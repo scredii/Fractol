@@ -60,9 +60,9 @@ void		ft_mandel(t_env *e)
 		y = -1;
 		while (++y < HEIGHT)
 		{
-			draw.z.re = ((long double)x - 600) / (e->zoom * 600)
+			draw.z.re = ((long double)x - LENGTH/2) / (e->zoom * LENGTH/2)
 				+ e->movex + e->shiftx;
-			draw.z.im = ((long double)y - 800) / (e->zoom * 800)
+			draw.z.im = ((long double)y - HEIGHT/2) / (e->zoom * HEIGHT/2)
 				+ e->movey + e->shifty;
 			draw.newz.re = 0;
 			draw.newz.im = 0;
@@ -89,9 +89,9 @@ void		ft_julia(t_env *e)
 		y = -1;
 		while (++y < HEIGHT)
 		{
-			draw.newz.re = 1.5 * ((long double)x - 600) / (e->zoom * 600)
+			draw.newz.re = 1.5 * ((long double)x - LENGTH/2) / (e->zoom * LENGTH/2)
 				+ e->movex + e->shiftx;
-			draw.newz.im = ((long double)y - 600) / (e->zoom * 600)
+			draw.newz.im = ((long double)y - LENGTH/2) / (e->zoom * LENGTH/2)
 				+ e->movey + e->shifty;
 			i = ft_iter(&draw, e);
 			pixel(x, y, i, e);
